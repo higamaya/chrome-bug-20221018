@@ -10,7 +10,7 @@ Chrome crashes when calling setRangeText just before setSelectionRange on an inp
 
 2. Open [index.html](./index.html) in Chrome.
 
-3. Click `Increase text` button several times
+3. Click `Increase text` button several times.
 
 4. When character counter exceeds 402, Chrome will crash.
 
