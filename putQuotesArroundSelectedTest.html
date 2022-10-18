@@ -18,7 +18,7 @@
           // To avoid crashing Chrome, set the entire new text to the value property instead of using setRangeText, 
           inputField.value = inputField.value.substring(0, selectionStart) + '"' + selectedText + '"' + inputField.value.substring(selectionEnd);
         } else {
-          // Calling setRangeText just before setSelectionRange on an input field that is receiving focus seems to cause chrome crashing.
+          // Calling setRangeText just before setSelectionRange on an input field element that has received focus seems to cause chrome crashing.
           inputField.setRangeText('"' + selectedText + '"', selectionStart, selectionEnd);
         }
         inputField.setSelectionRange(selectionStart + 1, selectionEnd + 1);
