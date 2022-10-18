@@ -20,9 +20,9 @@
       document.getElementById("char-count").innerText = count;
     }
     document.addEventListener("DOMContentLoaded", (e) => {
-      const text = "a".repeat(390);
-      document.getElementById("input-field").value = text;
-      updateCharCount(text.length);
+      const inputField = document.getElementById("input-field");
+      inputField.value = "a".repeat(390);
+      updateCharCount(inputField.value.length);
     });
   </script>
 </head>
