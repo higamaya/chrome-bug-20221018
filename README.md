@@ -16,6 +16,12 @@ Chrome crashes when executing a certain JavaScript code.
 
 ## Environment
 
+### OS
+
 * Microsoft Windows 10 Pro 10.0.19044
-* Google Chrome 106.0.5249.119 64bit
+
+### Browser
+
+* Google Chrome 106.0.5249.119 (Official Build) (64-bit)
+* Microsoft Edge 106.0.1370.47 (Official build) (64-bit)
 
