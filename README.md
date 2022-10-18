@@ -31,3 +31,6 @@ I discovered this problem when I was implementing a feature where selecting text
 [putQuotesArroundSelectedTest.html](putQuotesArroundSelectedTest.html) is closer to that implementation (with a lot of simplifications though).<br>
 [index.html](./index.html) has been created to further simplify and minimize code to reproduce the problem.
 
+## Reported
+
+https://bugs.chromium.org/p/chromium/issues/detail?id=1376037
