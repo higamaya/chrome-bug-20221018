@@ -2,7 +2,7 @@
 
 ## Issue
 
-Chrome crashes when executing a cretain JavaScript code.
+Chrome crashes when executing a certain JavaScript code.
 
 ## Steps that cause problems
 
