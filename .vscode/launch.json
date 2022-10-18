@@ -6,6 +6,12 @@
       "request": "launch",
       "name": "Open index.html",
       "file": "index.html"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Open putQuotesArroundSelectedTest.html",
+      "file": "putQuotesArroundSelectedTest.html"
     }
   ]
 }

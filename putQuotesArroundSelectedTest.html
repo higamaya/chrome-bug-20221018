@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    textarea {
+      width: 100%;
+      height: 20em;
+    }
+  </style>
+  <script>
+    function putQuotesArroundSelectedText(inputField) {
+      const selectionStart = inputField.selectionStart;
+      const selectionEnd = inputField.selectionEnd;
+      if (selectionStart < selectionEnd) {
+        const selectedText = inputField.value.substring(selectionStart, selectionEnd);
+        if (document.getElementById("avoid-chrome-crashing").checked) {
+          // To avoid crashing Chrome, set the entire new text to the value property instead of using setRangeText, 
+          inputField.value = inputField.value.substring(0, selectionStart) + '"' + selectedText + '"' + inputField.value.substring(selectionEnd);
+        } else {
+          // Calling setRangeText just before setSelectionRange on an input field that is receiving focus seems to cause chrome crashing.
+          inputField.setRangeText('"' + selectedText + '"', selectionStart, selectionEnd);
+        }
+        inputField.setSelectionRange(selectionStart + 1, selectionEnd + 1);
+        return true;
+      } else {
+        return false;
+      }
+    }
+    function updateSelectedTextLength(inputField) {
+      document.getElementById("selected-text-length").innerText = (inputField.selectionEnd - inputField.selectionStart);
+    }
+    document.addEventListener("DOMContentLoaded", (e) => {
+      const inputField = document.getElementById("input-field");
+      inputField.value = "a".repeat(1000);
+      inputField.addEventListener("keydown", (e) => {
+        if (e.key === '"' && e.cancelable && !e.isComposing && !e.ctrlKey && !e.altKey && !e.metaKey && !e.repeat) {
+          if (putQuotesArroundSelectedText(e.target)) {
+            e.preventDefault();
+          }
+        }
+      });
+      inputField.addEventListener("select", (e) => {
+        updateSelectedTextLength(e.target);
+      });
+      updateSelectedTextLength(inputField);
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+    <textarea id="input-field"></textarea>
+  </div>
+  <div>
+    Selected text length:
+    <span id="selected-text-length"></span>
+  </div>
+  <div>
+  </div>
+  <div>
+    <p>
+      Select any text in the input field above and press the key to enter double quotes, the selected text will be
+      enclosed in quotes.<br>
+      Here comes the problem, if the length of the selected text exceeds 400, Chrome crashes!
+    </p>
+  </div>
+  <div>
+    <input id="avoid-chrome-crashing" type="checkbox">
+    <label for="avoid-chrome-crashing">Avoid Chrome crashing</label>
+  </div>
+</body>
+
+</html>
