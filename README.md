@@ -19,6 +19,7 @@ Chrome crashes when calling setRangeText just before setSelectionRange on an inp
 ### OS
 
 * Microsoft Windows 10 Pro 10.0.19044
+* Microsoft Windows 10 Home 10.0.19044
 
 ### Browser
 
