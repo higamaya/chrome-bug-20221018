@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    textarea {
+      width: 100%;
+      height: 20em;
+    }
+  </style>
+  <script>
+    function increaseText() {
+      const inputField = document.getElementById("input-field");
+      inputField.focus();
+      inputField.setRangeText('"' + inputField.value + '"', 0, inputField.value.length);
+      inputField.setSelectionRange(1, inputField.value.length - 1);
+      updateCharCount(inputField.value.length);
+    }
+    function updateCharCount(count) {
+      document.getElementById("char-count").innerText = count;
+    }
+    document.addEventListener("DOMContentLoaded", (e) => {
+      const text = "a".repeat(390);
+      document.getElementById("input-field").value = text;
+      updateCharCount(text.length);
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+    <textarea id="input-field" onchange="updateCharCount(this.value.length);"></textarea>
+  </div>
+  <div>
+    <button id="increase=button" onclick="increaseText();">Increase text</button>
+    <span id="char-count"></span>
+  </div>
+</body>
+
+</html>
