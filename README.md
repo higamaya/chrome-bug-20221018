@@ -2,17 +2,21 @@
 
 ## Issue
 
-Chrome crashes when calling setRangeText just before setSelectionRange on an input field element that has received focus.
+Chrome crashes when calling setRangeText just before setSelectionRange on an input field element that has received focus.<br>
+This problem brings down the entire Chrome process, not only a specific tab process.
 
 ## Steps that cause problems
 
+**:warning: All tabs in Chrome will be force closed when the above problem is reproduced by the following steps.<br>
+:warning: So make sure it's okay to close all tabs if you are working on Chrome.**
+
 1. Clone this repo.
 
-2. Open [index.html](./index.html) in Chrome.
+1. Open [index.html](./index.html) in Chrome.
 
-3. Click `Increase text` button several times.
+1. Click `Increase text` button several times.
 
-4. When character counter exceeds 402, Chrome will crash.
+1. When character counter exceeds 402, Chrome will crash.
 
 ## Environment
 
