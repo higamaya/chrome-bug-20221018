@@ -5,7 +5,7 @@
 Chrome crashes when calling setRangeText just before setSelectionRange on an input field element that has received focus.<br>
 This problem brings down the entire Chrome process, not only a specific tab process.
 
-## Steps that cause problems
+## Steps that cause the problem
 
 **:warning: All tabs in Chrome will be force closed when the above problem is reproduced by the following steps.<br>
 :warning: So make sure it's okay to close all tabs if you are working on Chrome.**
