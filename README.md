@@ -25,6 +25,13 @@ This problem brings down the entire Chrome process, not only a specific tab proc
 * Microsoft Windows 10 Pro 10.0.19044
 * Microsoft Windows 10 Home 10.0.19044
 
+### IME
+
+* Microsoft Japanese IME
+
+  > This problem is not reproduced when enabling the previous version of IME according to the instructions in Compatibility section of the following URL.<br>
+https://support.microsoft.com/en-us/windows/microsoft-japanese-ime-da40471d-6b91-4042-ae8b-713a96476916<br>
+
 ### Browser
 
 * Google Chrome 106.0.5249.119 (Official Build) (64-bit)
